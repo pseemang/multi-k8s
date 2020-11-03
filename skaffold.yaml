@@ -26,7 +26,7 @@ build:
         '**/*.js': .
 deploy:
   kubectl:
-    maanifests:
+    manifests:
       - k8s/client-deployment.yaml
       - k8s/server-deployment.yaml
       - k8s/worker-deployment.yaml

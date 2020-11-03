@@ -12,6 +12,18 @@ build:
         '**/*.js': .
         '**/*.css': .
         '**/*.html': .
+    - image: pseemangal/multi-server
+      context: server
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
+    - image: pseemangal/multi-worker
+      context: worker
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        '**/*.js': .
 deploy:
   kubectl:
     maanifests:
